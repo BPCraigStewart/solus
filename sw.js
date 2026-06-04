@@ -1,4 +1,4 @@
-const CACHE_NAME = 'solus-v5';
+const CACHE_NAME = 'solus-v6';
 const ASSETS = [
   '/',
   '/index.html',
