@@ -42,7 +42,6 @@
     position: relative;
   }
 
-  /* Header */
   .header {
     padding: 52px 24px 16px;
     border-bottom: 0.5px solid var(--border);
@@ -56,7 +55,16 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--ink);
-    margin-bottom: 14px;
+    margin-bottom: 6px;
+  }
+
+  .greeting {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    margin-bottom: 12px;
+    letter-spacing: 0.01em;
   }
 
   .header-row {
@@ -64,8 +72,6 @@
     justify-content: space-between;
     align-items: flex-end;
   }
-
-  .date-block {}
 
   .date-main {
     font-family: 'Space Grotesk', sans-serif;
@@ -101,7 +107,6 @@
     color: var(--muted);
   }
 
-  /* Scroll area */
   .scroll {
     flex: 1;
     overflow-y: auto;
@@ -125,7 +130,6 @@
     margin-bottom: 12px;
   }
 
-  /* Session card */
   .session-title {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 22px;
@@ -183,7 +187,6 @@
     line-height: 1.5;
   }
 
-  /* Habits */
   .habit-list { display: flex; flex-direction: column; }
 
   .habit-item {
@@ -240,7 +243,6 @@
 
   .habit-check i { font-size: 12px; color: #FAFAF8; }
 
-  /* Progress */
   .progress-row {
     display: flex;
     align-items: center;
@@ -270,7 +272,6 @@
     white-space: nowrap;
   }
 
-  /* Reflection */
   .prompt-text {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 15px;
@@ -306,7 +307,6 @@
   .reflection-input:focus { border-color: var(--accent); }
   .reflection-input::placeholder { color: #C8C8C4; }
 
-  /* Tab bar */
   .tab-bar {
     position: absolute;
     bottom: 0; left: 0; right: 0;
@@ -341,7 +341,6 @@
 
   .tab.active .tab-label { color: var(--accent); }
 
-  /* Mood */
   .mood-row { display: flex; gap: 6px; margin-top: 4px; }
 
   .mood-pip {
@@ -367,7 +366,6 @@
     color: #FAFAF8;
   }
 
-  /* Coming soon screens */
   .coming-soon {
     display: flex;
     flex-direction: column;
@@ -397,7 +395,6 @@
     line-height: 1.6;
   }
 
-  /* Screens */
   .screen { display: none; flex-direction: column; flex: 1; overflow: hidden; }
   .screen.active { display: flex; }
 </style>
@@ -410,6 +407,7 @@
   <div class="screen active" id="screen-today">
     <div class="header">
       <div class="wordmark">solus</div>
+      <div class="greeting" id="greeting"></div>
       <div class="header-row">
         <div class="date-block">
           <div class="date-main" id="date-main"></div>
@@ -418,14 +416,11 @@
         <div class="training-badge" id="training-badge"></div>
       </div>
     </div>
-
     <div class="scroll">
-
       <div class="section" id="session-section">
         <div class="eyebrow">Today's session</div>
         <div id="session-content"></div>
       </div>
-
       <div class="section">
         <div class="eyebrow">Habits</div>
         <div class="habit-list" id="habit-list"></div>
@@ -436,10 +431,9 @@
           <div class="progress-label" id="progress-label">0 / 5</div>
         </div>
       </div>
-
       <div class="section">
         <div class="eyebrow">Mood</div>
-        <div class="mood-row" id="mood-row">
+        <div class="mood-row">
           <div class="mood-pip" data-mood="1" onclick="setMood(1)">1</div>
           <div class="mood-pip" data-mood="2" onclick="setMood(2)">2</div>
           <div class="mood-pip" data-mood="3" onclick="setMood(3)">3</div>
@@ -447,13 +441,11 @@
           <div class="mood-pip" data-mood="5" onclick="setMood(5)">5</div>
         </div>
       </div>
-
       <div class="section">
         <div class="eyebrow">Reflection</div>
         <div class="prompt-text" id="prompt-text"></div>
         <textarea class="reflection-input" placeholder="Write anything..." id="reflection-input"></textarea>
       </div>
-
     </div>
   </div>
 
@@ -461,6 +453,7 @@
   <div class="screen" id="screen-mind">
     <div class="header">
       <div class="wordmark">solus</div>
+      <div class="greeting" id="greeting-mind"></div>
       <div class="header-row">
         <div class="date-block">
           <div class="date-main">Mind</div>
@@ -479,6 +472,7 @@
   <div class="screen" id="screen-train">
     <div class="header">
       <div class="wordmark">solus</div>
+      <div class="greeting" id="greeting-train"></div>
       <div class="header-row">
         <div class="date-block">
           <div class="date-main">Train</div>
@@ -497,6 +491,7 @@
   <div class="screen" id="screen-eat">
     <div class="header">
       <div class="wordmark">solus</div>
+      <div class="greeting" id="greeting-eat"></div>
       <div class="header-row">
         <div class="date-block">
           <div class="date-main">Eat</div>
@@ -515,6 +510,7 @@
   <div class="screen" id="screen-progress">
     <div class="header">
       <div class="wordmark">solus</div>
+      <div class="greeting" id="greeting-progress"></div>
       <div class="header-row">
         <div class="date-block">
           <div class="date-main">Progress</div>
@@ -531,23 +527,23 @@
 
   <!-- TAB BAR -->
   <div class="tab-bar">
-    <div class="tab active" onclick="switchTab('today')">
+    <div class="tab active" onclick="switchTab('today', this)">
       <i class="ti ti-home"></i>
       <span class="tab-label">Today</span>
     </div>
-    <div class="tab" onclick="switchTab('mind')">
+    <div class="tab" onclick="switchTab('mind', this)">
       <i class="ti ti-brain"></i>
       <span class="tab-label">Mind</span>
     </div>
-    <div class="tab" onclick="switchTab('train')">
+    <div class="tab" onclick="switchTab('train', this)">
       <i class="ti ti-barbell"></i>
       <span class="tab-label">Train</span>
     </div>
-    <div class="tab" onclick="switchTab('eat')">
+    <div class="tab" onclick="switchTab('eat', this)">
       <i class="ti ti-salad"></i>
       <span class="tab-label">Eat</span>
     </div>
-    <div class="tab" onclick="switchTab('progress')">
+    <div class="tab" onclick="switchTab('progress', this)">
       <i class="ti ti-chart-line"></i>
       <span class="tab-label">Progress</span>
     </div>
@@ -556,7 +552,6 @@
 </div>
 
 <script>
-  // ── Data ──────────────────────────────────────────────
   const HABITS = [
     { id: 'exercise', name: 'Exercise' },
     { id: 'meditate', name: 'Meditate' },
@@ -585,7 +580,21 @@
     'What is one thing you are genuinely <em>proud of</em> this week?'
   ];
 
-  // ── State ─────────────────────────────────────────────
+  function getGreeting() {
+    const hour = new Date().getHours();
+    if (hour < 12) return 'Good morning, Craig.';
+    if (hour < 18) return 'Good afternoon, Craig.';
+    return 'Good evening, Craig.';
+  }
+
+  function renderGreetings() {
+    const greeting = getGreeting();
+    ['greeting', 'greeting-mind', 'greeting-train', 'greeting-eat', 'greeting-progress'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = greeting;
+    });
+  }
+
   const todayKey = () => new Date().toISOString().slice(0, 10);
 
   function getState() {
@@ -594,30 +603,22 @@
     return { habits: {}, mood: null, reflection: '' };
   }
 
-  function saveState(state) {
-    localStorage.setItem('solus-' + todayKey(), JSON.stringify(state));
+  function saveState(s) {
+    localStorage.setItem('solus-' + todayKey(), JSON.stringify(s));
   }
 
   let state = getState();
 
-  // ── Date & session ────────────────────────────────────
   function renderHeader() {
     const now = new Date();
     const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    const dayName = days[now.getDay()];
-    const date = now.getDate();
-    const month = months[now.getMonth()];
-
-    document.getElementById('date-main').textContent = dayName + ', ' + date + ' ' + month;
-
+    document.getElementById('date-main').textContent = days[now.getDay()] + ', ' + now.getDate() + ' ' + months[now.getMonth()];
     const session = PPL[now.getDay()];
     document.getElementById('date-sub').textContent = session.label;
-
     const badge = document.getElementById('training-badge');
     badge.textContent = session.label;
     badge.className = 'training-badge' + (session.type === 'rest' ? ' rest' : '');
-
     const sessionContent = document.getElementById('session-content');
     if (session.type === 'training') {
       sessionContent.innerHTML = `
@@ -630,21 +631,17 @@
           <i class="ti ti-player-play"></i>Begin
         </button>`;
     } else {
-      sessionContent.innerHTML = `
-        <div class="rest-text">Rest day. Recover well, eat well, sleep well.<br>You earn tomorrow in the margins of today.</div>`;
+      sessionContent.innerHTML = `<div class="rest-text">Rest day. Recover well, eat well, sleep well.<br>You earn tomorrow in the margins of today.</div>`;
     }
   }
 
-  // ── Habits ────────────────────────────────────────────
   function renderHabits() {
     const list = document.getElementById('habit-list');
     list.innerHTML = '';
     let done = 0;
-
     HABITS.forEach((habit, i) => {
       const isDone = !!state.habits[habit.id];
       if (isDone) done++;
-
       const item = document.createElement('div');
       item.className = 'habit-item';
       item.onclick = () => toggleHabit(habit.id);
@@ -658,7 +655,6 @@
         </div>`;
       list.appendChild(item);
     });
-
     const pct = (done / HABITS.length) * 100;
     document.getElementById('progress-fill').style.width = pct + '%';
     document.getElementById('progress-label').textContent = done + ' / ' + HABITS.length;
@@ -670,7 +666,6 @@
     renderHabits();
   }
 
-  // ── Mood ──────────────────────────────────────────────
   function renderMood() {
     document.querySelectorAll('.mood-pip').forEach(pip => {
       pip.classList.toggle('selected', parseInt(pip.dataset.mood) === state.mood);
@@ -683,10 +678,8 @@
     renderMood();
   }
 
-  // ── Reflection ────────────────────────────────────────
   function renderReflection() {
-    const dayIndex = new Date().getDay();
-    document.getElementById('prompt-text').innerHTML = PROMPTS[dayIndex];
+    document.getElementById('prompt-text').innerHTML = PROMPTS[new Date().getDay()];
     const input = document.getElementById('reflection-input');
     input.value = state.reflection || '';
     input.addEventListener('input', () => {
@@ -695,31 +688,26 @@
     });
   }
 
-  // ── Tabs ──────────────────────────────────────────────
-  function switchTab(name) {
+  function switchTab(name, el) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     document.getElementById('screen-' + name).classList.add('active');
-    event.currentTarget.classList.add('active');
+    el.classList.add('active');
   }
 
-  // ── Begin session ─────────────────────────────────────
   function beginSession() {
-    toggleHabit('exercise');
-    switchTab('train');
-    document.querySelectorAll('.tab').forEach((t, i) => {
-      if (i === 2) t.classList.add('active');
-      else t.classList.remove('active');
-    });
+    state.habits['exercise'] = true;
+    saveState(state);
+    renderHabits();
+    switchTab('train', document.querySelectorAll('.tab')[2]);
   }
 
-  // ── Init ──────────────────────────────────────────────
+  renderGreetings();
   renderHeader();
   renderHabits();
   renderMood();
   renderReflection();
 
-  // ── Service worker ────────────────────────────────────
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js');
   }
