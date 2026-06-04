@@ -366,6 +366,7 @@
     color: #FAFAF8;
   }
 
+  /* Exercise styles */
   .exercise-card {
     background: var(--surface);
     border: 0.5px solid var(--border);
@@ -384,29 +385,10 @@
   }
 
   .exercise-header.completed { background: var(--accent-light); }
-
-  .exercise-name {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--ink);
-  }
-
+  .exercise-name { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 500; color: var(--ink); }
   .exercise-name.completed { color: var(--accent); }
-
-  .exercise-target {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    color: var(--muted);
-    letter-spacing: 0.06em;
-    margin-top: 2px;
-  }
-
-  .exercise-body {
-    padding: 12px 14px;
-    display: none;
-  }
-
+  .exercise-target { font-family: 'Space Mono', monospace; font-size: 9px; color: var(--muted); letter-spacing: 0.06em; margin-top: 2px; }
+  .exercise-body { padding: 12px 14px; display: none; }
   .exercise-body.open { display: block; }
 
   .set-row {
@@ -418,14 +400,7 @@
   }
 
   .set-row:last-of-type { border-bottom: none; }
-
-  .set-num {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    color: #C8C8C4;
-    width: 20px;
-    flex-shrink: 0;
-  }
+  .set-num { font-family: 'Space Mono', monospace; font-size: 9px; color: #C8C8C4; width: 20px; flex-shrink: 0; }
 
   .set-input {
     flex: 1;
@@ -445,82 +420,55 @@
   .set-input::placeholder { color: #C8C8C4; font-size: 10px; }
 
   .set-done-btn {
-    width: 28px;
-    height: 28px;
+    width: 28px; height: 28px;
     border-radius: 3px;
     border: 1.5px solid #C8C8C4;
     background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; flex-shrink: 0;
     transition: all 0.15s;
   }
 
-  .set-done-btn.done {
-    background: var(--accent);
-    border-color: var(--accent);
-  }
-
+  .set-done-btn.done { background: var(--accent); border-color: var(--accent); }
   .set-done-btn i { font-size: 13px; color: #FAFAF8; }
 
   .set-inputs-header {
-    display: flex;
-    gap: 8px;
-    padding: 0 0 4px;
-    margin-left: 28px;
+    display: flex; gap: 8px; padding: 0 0 4px; margin-left: 28px;
   }
 
   .set-inputs-header span {
     flex: 1;
     font-family: 'Space Mono', monospace;
-    font-size: 8px;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-align: center;
+    font-size: 8px; color: var(--muted);
+    letter-spacing: 0.08em; text-transform: uppercase; text-align: center;
   }
 
   .set-inputs-header .spacer { width: 28px; flex: none; }
 
   .session-complete-btn {
-    width: 100%;
-    padding: 14px;
-    background: var(--accent);
-    color: #FAFAF8;
-    border: none;
-    border-radius: 6px;
+    width: 100%; padding: 14px;
+    background: var(--accent); color: #FAFAF8;
+    border: none; border-radius: 6px;
     font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 16px;
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    cursor: pointer; margin-top: 16px;
     transition: opacity 0.15s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
   }
 
   .session-complete-btn:active { opacity: 0.8; }
 
   .complete-banner {
-    background: var(--accent);
-    color: #FAFAF8;
-    padding: 12px 24px;
-    text-align: center;
+    background: var(--accent); color: #FAFAF8;
+    padding: 12px 24px; text-align: center;
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    display: none;
-    flex-shrink: 0;
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    display: none; flex-shrink: 0;
   }
 
   .complete-banner.show { display: block; }
 
+  /* C25K styles */
   .c25k-card {
     background: var(--surface);
     border: 0.5px solid var(--border);
@@ -531,77 +479,37 @@
 
   .c25k-week {
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 4px;
+    font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 4px;
   }
 
   .c25k-title {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--ink);
-    letter-spacing: -0.01em;
-    margin-bottom: 8px;
+    font-size: 18px; font-weight: 500; color: var(--ink);
+    letter-spacing: -0.01em; margin-bottom: 8px;
   }
 
   .c25k-structure {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 13px;
-    font-weight: 300;
-    color: #3A3A36;
-    line-height: 1.6;
-    margin-bottom: 14px;
-    padding: 10px 12px;
-    background: var(--subtle);
-    border-radius: 6px;
+    font-size: 13px; font-weight: 300; color: #3A3A36;
+    line-height: 1.6; margin-bottom: 14px;
+    padding: 10px 12px; background: var(--subtle); border-radius: 6px;
   }
 
   .c25k-progress {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
   }
 
-  .c25k-progress-track {
-    flex: 1;
-    height: 2px;
-    background: var(--border);
-    border-radius: 1px;
-  }
-
-  .c25k-progress-fill {
-    height: 2px;
-    background: var(--accent);
-    border-radius: 1px;
-    transition: width 0.4s ease;
-  }
-
-  .c25k-progress-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    color: var(--muted);
-    white-space: nowrap;
-  }
+  .c25k-progress-track { flex: 1; height: 2px; background: var(--border); border-radius: 1px; }
+  .c25k-progress-fill { height: 2px; background: var(--accent); border-radius: 1px; transition: width 0.4s ease; }
+  .c25k-progress-label { font-family: 'Space Mono', monospace; font-size: 9px; color: var(--muted); white-space: nowrap; }
 
   .c25k-btn {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: opacity 0.15s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    width: 100%; padding: 12px; border: none; border-radius: 6px;
+    font-family: 'Space Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    cursor: pointer; transition: opacity 0.15s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
     margin-bottom: 8px;
   }
 
@@ -610,59 +518,209 @@
   .c25k-btn:active { opacity: 0.8; }
 
   .recovery-card {
-    background: var(--subtle);
+    background: var(--subtle); border: 0.5px solid var(--border);
+    border-radius: 10px; padding: 14px 16px; margin-bottom: 10px;
+  }
+
+  .recovery-title { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+  .recovery-sub { font-family: 'Space Mono', monospace; font-size: 9px; color: var(--muted); letter-spacing: 0.06em; line-height: 1.5; }
+
+  /* Mind styles */
+  .mind-card {
+    background: var(--surface);
     border: 0.5px solid var(--border);
     border-radius: 10px;
-    padding: 14px 16px;
+    padding: 16px;
     margin-bottom: 10px;
   }
 
-  .recovery-title {
+  .mind-card-title {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 4px;
+    font-size: 16px; font-weight: 500; color: var(--ink);
+    letter-spacing: -0.01em; margin-bottom: 4px;
   }
 
-  .recovery-sub {
+  .mind-card-sub {
     font-family: 'Space Mono', monospace;
-    font-size: 9px;
+    font-size: 9px; color: var(--muted);
+    letter-spacing: 0.06em; margin-bottom: 14px;
+  }
+
+  .mind-btn {
+    width: 100%; padding: 11px; border: none; border-radius: 6px;
+    font-family: 'Space Mono', monospace; font-size: 10px;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    cursor: pointer; transition: opacity 0.15s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .mind-btn.primary { background: var(--accent); color: #FAFAF8; }
+  .mind-btn.secondary { background: var(--subtle); color: var(--muted); border: 0.5px solid var(--border); }
+  .mind-btn.done { background: var(--accent-light); color: var(--accent); border: 0.5px solid var(--accent); }
+  .mind-btn:active { opacity: 0.8; }
+
+  /* Breathing circle */
+  .breath-container {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 20px 0; gap: 12px;
+  }
+
+  .breath-circle-outer {
+    width: 120px; height: 120px; border-radius: 50%;
+    border: 1.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 4s ease-in-out;
+  }
+
+  .breath-circle-inner {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: var(--accent-light);
+    border: 1px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 4s ease-in-out;
+  }
+
+  .breath-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent); text-align: center;
+  }
+
+  .breath-instruction {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px; font-weight: 300; color: var(--ink);
+    text-align: center; letter-spacing: -0.01em;
+  }
+
+  .breath-timer {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px; color: var(--muted); text-align: center;
+  }
+
+  /* Meditation session overlay */
+  .session-overlay {
+    position: fixed; inset: 0;
+    background: var(--bg);
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 32px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .session-overlay.active { display: flex; }
+
+  .session-overlay-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 24px; text-align: center;
+  }
+
+  .session-circle {
+    width: 160px; height: 160px; border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 32px; position: relative;
+  }
+
+  .session-circle-inner {
+    width: 120px; height: 120px; border-radius: 50%;
+    background: var(--accent-light);
+    border: 1px solid var(--accent);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 4px;
+    transition: transform 3s ease-in-out;
+  }
+
+  .session-time-display {
+    font-family: 'Space Mono', monospace;
+    font-size: 22px; font-weight: 700; color: var(--accent);
+  }
+
+  .session-time-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase;
     color: var(--muted);
-    letter-spacing: 0.06em;
-    line-height: 1.5;
+  }
+
+  .session-instruction {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px; font-weight: 300; color: var(--ink);
+    text-align: center; line-height: 1.5; margin-bottom: 12px;
+    letter-spacing: -0.01em; min-height: 60px;
+  }
+
+  .session-instruction em { font-style: italic; color: var(--accent); }
+
+  .session-stop-btn {
+    margin-top: 32px; padding: 12px 28px;
+    background: transparent; border: 0.5px solid var(--border);
+    border-radius: 6px; font-family: 'Space Mono', monospace;
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); cursor: pointer;
+  }
+
+  /* Stoic card */
+  .stoic-card {
+    background: var(--ink);
+    border-radius: 10px; padding: 20px; margin-bottom: 10px;
+  }
+
+  .stoic-quote {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px; font-weight: 300; font-style: italic;
+    color: #FAFAF8; line-height: 1.65; margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .stoic-author {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* Session selector */
+  .session-selector {
+    display: flex; gap: 8px; margin-bottom: 12px;
+  }
+
+  .session-select-btn {
+    flex: 1; padding: 8px 4px;
+    border-radius: 3px; border: 0.5px solid var(--border);
+    background: var(--subtle); color: var(--muted);
+    font-family: 'Space Mono', monospace; font-size: 8px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    cursor: pointer; transition: all 0.15s; text-align: center;
+  }
+
+  .session-select-btn.active {
+    background: var(--accent); color: #FAFAF8; border-color: var(--accent);
   }
 
   .screen { display: none; flex-direction: column; flex: 1; overflow: hidden; }
   .screen.active { display: flex; }
 
   .coming-soon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    gap: 12px;
-    padding: 40px 24px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    flex: 1; gap: 12px; padding: 40px 24px;
   }
 
   .coming-soon i { font-size: 32px; color: var(--border); }
 
   .coming-soon-title {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--ink);
-    letter-spacing: -0.01em;
+    font-size: 18px; font-weight: 500; color: var(--ink); letter-spacing: -0.01em;
   }
 
   .coming-soon-sub {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 0.06em;
-    text-align: center;
-    line-height: 1.6;
+    font-size: 10px; color: var(--muted);
+    letter-spacing: 0.06em; text-align: center; line-height: 1.6;
   }
 </style>
 </head>
@@ -724,14 +782,12 @@
       <div class="header-row">
         <div class="date-block">
           <div class="date-main">Mind</div>
-          <div class="date-sub">Meditation & breathwork</div>
+          <div class="date-sub">Breathwork · meditation · reflection</div>
         </div>
       </div>
     </div>
-    <div class="coming-soon">
-      <i class="ti ti-brain"></i>
-      <div class="coming-soon-title">Coming soon</div>
-      <div class="coming-soon-sub">Guided meditation, breathwork,<br>and daily reflections</div>
+    <div class="scroll">
+      <div style="padding-top: 16px;" id="mind-content"></div>
     </div>
   </div>
 
@@ -749,7 +805,7 @@
       </div>
     </div>
     <div class="complete-banner" id="complete-banner">Session complete. Well done.</div>
-    <div class="scroll" id="train-scroll">
+    <div class="scroll">
       <div id="train-content"></div>
     </div>
   </div>
@@ -816,10 +872,101 @@
     </div>
   </div>
 
+  <!-- MEDITATION OVERLAY -->
+  <div class="session-overlay" id="session-overlay">
+    <div class="session-overlay-title" id="overlay-title">Morning focus · 5 min</div>
+    <div class="session-circle">
+      <div class="session-circle-inner" id="session-circle-inner">
+        <div class="session-time-display" id="session-time-display">5:00</div>
+        <div class="session-time-label">remaining</div>
+      </div>
+    </div>
+    <div class="session-instruction" id="session-instruction">Find a comfortable position and close your eyes.</div>
+    <button class="session-stop-btn" onclick="stopMeditation()">End session</button>
+  </div>
+
 </div>
 
 <script>
-  // ── C25K Programme ────────────────────────────────────
+  // ── Stoic quotes ──────────────────────────────────────
+  const STOIC = [
+    { quote: "You have power over your mind, not outside events. Realise this, and you will find strength.", author: "Marcus Aurelius" },
+    { quote: "He who fears death will never do anything worthy of a man who is alive.", author: "Seneca" },
+    { quote: "Make the best use of what is in your power, and take the rest as it happens.", author: "Epictetus" },
+    { quote: "Waste no more time arguing about what a good man should be. Be one.", author: "Marcus Aurelius" },
+    { quote: "It is not the man who has too little, but the man who craves more, that is poor.", author: "Seneca" },
+    { quote: "First say to yourself what you would be; and then do what you have to do.", author: "Epictetus" },
+    { quote: "The happiness of your life depends upon the quality of your thoughts.", author: "Marcus Aurelius" },
+    { quote: "Luck is what happens when preparation meets opportunity.", author: "Seneca" },
+    { quote: "No man is free who is not master of himself.", author: "Epictetus" },
+    { quote: "Very little is needed to make a happy life; it is all within yourself, in your way of thinking.", author: "Marcus Aurelius" },
+    { quote: "Difficulties strengthen the mind, as labour does the body.", author: "Seneca" },
+    { quote: "The key is to keep company only with people who uplift you, whose presence calls forth your best.", author: "Epictetus" },
+    { quote: "Accept the things to which fate binds you, and love the people with whom fate brings you together.", author: "Marcus Aurelius" },
+    { quote: "Begin at once to live, and count each separate day as a separate life.", author: "Seneca" }
+  ];
+
+  // ── Meditation scripts ────────────────────────────────
+  const MEDITATIONS = {
+    morning: {
+      name: 'Morning focus',
+      sub: '5 min · set your intention',
+      steps: [
+        { time: 0, text: "Find a comfortable position and close your eyes. Take a slow breath in through your nose." },
+        { time: 15, text: "Breathe out slowly. Let your shoulders drop. Feel the weight of your body settle." },
+        { time: 35, text: "Breathe in again, gently and deeply. You are here. You are present. This moment belongs to you." },
+        { time: 55, text: "As you breathe out, let go of anything from yesterday. It is done. Today is new." },
+        { time: 75, text: "Think of one thing you want to bring to today. One quality. Patience. Focus. Strength. Hold it quietly." },
+        { time: 105, text: "Breathe in that quality. Feel it settle into your body with each breath." },
+        { time: 135, text: "You do not need to be perfect today. You only need to show up. That is enough." },
+        { time: 165, text: "Take a slow breath in. Hold it gently for a moment." },
+        { time: 185, text: "Breathe out. Notice how still you feel. This stillness is always available to you." },
+        { time: 210, text: "In the next few breaths, begin to bring your awareness back to the room around you." },
+        { time: 240, text: "When you are ready, open your eyes slowly. Carry this calm with you. You are ready for today." },
+        { time: 270, text: "Well done. Your session is complete." }
+      ]
+    },
+    evening: {
+      name: 'Evening wind-down',
+      sub: '5 min · release the day',
+      steps: [
+        { time: 0, text: "Settle into a comfortable position. Let your eyes close. The day is done." },
+        { time: 15, text: "Take a long, slow breath in. Hold it for just a moment." },
+        { time: 30, text: "Breathe out completely. Feel the tension in your body beginning to soften." },
+        { time: 50, text: "Scan your body from the top of your head downward. Wherever you feel tightness, breathe into it." },
+        { time: 75, text: "Your shoulders. Your jaw. Your hands. Let them all go heavy and soft." },
+        { time: 100, text: "Think of one moment from today that went well. Even something small. Hold it with gratitude." },
+        { time: 130, text: "You showed up today. That matters. Whatever happened, you were here." },
+        { time: 160, text: "With each breath out, let the day dissolve a little more. You do not need to carry it into sleep." },
+        { time: 195, text: "Breathe in slowly. Breathe out slowly. Your body knows how to rest. Trust it." },
+        { time: 230, text: "Let your thoughts slow down. You do not need to solve anything right now." },
+        { time: 260, text: "Take one more deep breath in. And out. You are safe. You are well. Rest now." },
+        { time: 290, text: "Well done. Your session is complete. Sleep well." }
+      ]
+    },
+    stress: {
+      name: 'Stress relief',
+      sub: '5 min · find your calm',
+      steps: [
+        { time: 0, text: "Wherever you are, stop for a moment. You do not need to fix anything right now. Just breathe." },
+        { time: 20, text: "Take a breath in through your nose for four counts. One. Two. Three. Four." },
+        { time: 40, text: "Hold it gently. One. Two. Three. Four." },
+        { time: 55, text: "Breathe out slowly through your mouth for four counts. One. Two. Three. Four." },
+        { time: 70, text: "Hold again. One. Two. Three. Four. This is box breathing. It signals safety to your body." },
+        { time: 90, text: "Again. Breathe in. One. Two. Three. Four." },
+        { time: 108, text: "Hold. One. Two. Three. Four." },
+        { time: 123, text: "Breathe out. One. Two. Three. Four." },
+        { time: 138, text: "Hold. One. Two. Three. Four. Notice your heart rate beginning to slow." },
+        { time: 158, text: "Whatever is worrying you, it exists outside this breath. Right now, there is only this." },
+        { time: 188, text: "You are more capable than the stress makes you feel. You have handled hard things before." },
+        { time: 218, text: "Take one more slow breath in. Hold it. And breathe out completely." },
+        { time: 250, text: "Open your eyes when you are ready. The situation has not changed, but you have." },
+        { time: 280, text: "Well done. Your session is complete." }
+      ]
+    }
+  };
+
+  // ── C25K ──────────────────────────────────────────────
   const C25K = [
     { week: 1, run: 1, structure: 'Brisk 5 min walk to warm up, then alternate 60 sec running and 90 sec walking for 20 minutes.' },
     { week: 1, run: 2, structure: 'Brisk 5 min walk to warm up, then alternate 60 sec running and 90 sec walking for 20 minutes.' },
@@ -847,15 +994,13 @@
     { week: 8, run: 3, structure: 'Brisk 5 min walk, then run 28 minutes without stopping.' },
     { week: 9, run: 1, structure: 'Brisk 5 min walk, then run 30 minutes without stopping. You are nearly there.' },
     { week: 9, run: 2, structure: 'Brisk 5 min walk, then run 30 minutes without stopping. One more after this.' },
-    { week: 9, run: 3, structure: 'Brisk 5 min walk, then run 30 minutes without stopping. This is your graduation run. You did it.' }
+    { week: 9, run: 3, structure: 'Brisk 5 min walk, then run 30 minutes without stopping. This is your graduation run.' }
   ];
 
-  // ── PPL Programme ─────────────────────────────────────
+  // ── PPL ───────────────────────────────────────────────
   const PROGRAMME = {
     push: {
-      label: 'Push day',
-      title: 'Upper push',
-      sub: 'chest · shoulders · triceps',
+      label: 'Push day', title: 'Upper push', sub: 'chest · shoulders · triceps',
       exercises: [
         { name: 'Barbell Bench Press', sets: 4, reps: 8 },
         { name: 'Dumbbell Incline Press', sets: 3, reps: 10 },
@@ -865,9 +1010,7 @@
       ]
     },
     pull: {
-      label: 'Pull day',
-      title: 'Upper pull',
-      sub: 'back · biceps · rear delts',
+      label: 'Pull day', title: 'Upper pull', sub: 'back · biceps · rear delts',
       exercises: [
         { name: 'Barbell Bent Over Row', sets: 4, reps: 8 },
         { name: 'Dumbbell Single Arm Row', sets: 3, reps: 10 },
@@ -878,9 +1021,7 @@
       ]
     },
     legs: {
-      label: 'Legs day',
-      title: 'Lower body',
-      sub: 'quads · hamstrings · glutes · calves',
+      label: 'Legs day', title: 'Lower body', sub: 'quads · hamstrings · glutes · calves',
       exercises: [
         { name: 'Dumbbell Bulgarian Split Squat', sets: 4, reps: 10 },
         { name: 'Barbell Romanian Deadlift', sets: 4, reps: 10 },
@@ -892,15 +1033,7 @@
     }
   };
 
-  const PPL_SCHEDULE = {
-    1: 'push',
-    2: 'rest',
-    3: 'pull',
-    4: 'rest',
-    5: 'legs',
-    6: 'rest',
-    0: 'rest'
-  };
+  const PPL_SCHEDULE = { 1: 'push', 2: 'rest', 3: 'pull', 4: 'rest', 5: 'legs', 6: 'rest', 0: 'rest' };
 
   const HABITS = [
     { id: 'exercise', name: 'Exercise' },
@@ -920,48 +1053,260 @@
     'What is one thing you are genuinely <em>proud of</em> this week?'
   ];
 
-  // ── Greeting ──────────────────────────────────────────
+  // ── State ─────────────────────────────────────────────
   function getGreeting() {
-    const hour = new Date().getHours();
-    if (hour < 12) return 'Good morning, Craig.';
-    if (hour < 18) return 'Good afternoon, Craig.';
+    const h = new Date().getHours();
+    if (h < 12) return 'Good morning, Craig.';
+    if (h < 18) return 'Good afternoon, Craig.';
     return 'Good evening, Craig.';
   }
 
   function renderGreetings() {
-    const greeting = getGreeting();
+    const g = getGreeting();
     ['greeting','greeting-mind','greeting-train','greeting-eat','greeting-progress'].forEach(id => {
       const el = document.getElementById(id);
-      if (el) el.textContent = greeting;
+      if (el) el.textContent = g;
     });
   }
 
-  // ── State ─────────────────────────────────────────────
   const todayKey = () => new Date().toISOString().slice(0, 10);
 
   function getState() {
-    const saved = localStorage.getItem('solus-' + todayKey());
-    if (saved) return JSON.parse(saved);
+    const s = localStorage.getItem('solus-' + todayKey());
+    if (s) return JSON.parse(s);
     return { habits: {}, mood: null, reflection: '', session: {} };
   }
 
   function getGlobalState() {
-    const saved = localStorage.getItem('solus-global');
-    if (saved) return JSON.parse(saved);
-    return { c25kSession: 0, c25kRunToday: false };
+    const s = localStorage.getItem('solus-global');
+    if (s) return JSON.parse(s);
+    return { c25kSession: 0 };
   }
 
-  function saveState(s) {
-    localStorage.setItem('solus-' + todayKey(), JSON.stringify(s));
-  }
-
-  function saveGlobalState(s) {
-    localStorage.setItem('solus-global', JSON.stringify(s));
-  }
+  function saveState(s) { localStorage.setItem('solus-' + todayKey(), JSON.stringify(s)); }
+  function saveGlobalState(s) { localStorage.setItem('solus-global', JSON.stringify(s)); }
 
   let state = getState();
   let globalState = getGlobalState();
   if (!state.session) state.session = {};
+
+  // ── Meditation engine ─────────────────────────────────
+  let medTimer = null;
+  let medElapsed = 0;
+  let medDuration = 300;
+  let medSteps = [];
+  let medVoice = null;
+  let currentMedKey = 'morning';
+
+  function loadVoices() {
+    const voices = window.speechSynthesis.getVoices();
+    const female = voices.find(v =>
+      (v.name.toLowerCase().includes('female') ||
+       v.name.toLowerCase().includes('samantha') ||
+       v.name.toLowerCase().includes('karen') ||
+       v.name.toLowerCase().includes('victoria') ||
+       v.name.toLowerCase().includes('moira') ||
+       v.name.toLowerCase().includes('fiona') ||
+       v.name.toLowerCase().includes('tessa') ||
+       v.name.toLowerCase().includes('google uk english female') ||
+       v.name.toLowerCase().includes('google us english')) &&
+      v.lang.startsWith('en')
+    ) || voices.find(v => v.lang.startsWith('en'));
+    medVoice = female || null;
+  }
+
+  window.speechSynthesis.onvoiceschanged = loadVoices;
+  loadVoices();
+
+  function speak(text) {
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    if (medVoice) u.voice = medVoice;
+    u.rate = 0.88;
+    u.pitch = 1.05;
+    u.volume = 1;
+    window.speechSynthesis.speak(u);
+  }
+
+  function startMeditation(key) {
+    currentMedKey = key;
+    const med = MEDITATIONS[key];
+    medSteps = med.steps;
+    medElapsed = 0;
+    medDuration = 300;
+
+    document.getElementById('overlay-title').textContent = med.name + ' · 5 min';
+    document.getElementById('session-instruction').textContent = medSteps[0].text;
+    document.getElementById('session-time-display').textContent = '5:00';
+    document.getElementById('session-overlay').classList.add('active');
+
+    speak(medSteps[0].text);
+
+    let stepIdx = 0;
+    medTimer = setInterval(() => {
+      medElapsed++;
+      const remaining = medDuration - medElapsed;
+      const mins = Math.floor(remaining / 60);
+      const secs = remaining % 60;
+      document.getElementById('session-time-display').textContent =
+        mins + ':' + (secs < 10 ? '0' : '') + secs;
+
+      // Animate circle
+      const pulse = 1 + 0.08 * Math.sin(medElapsed * 0.05);
+      document.getElementById('session-circle-inner').style.transform = `scale(${pulse})`;
+
+      // Advance steps
+      const nextStep = medSteps[stepIdx + 1];
+      if (nextStep && medElapsed >= nextStep.time) {
+        stepIdx++;
+        document.getElementById('session-instruction').textContent = medSteps[stepIdx].text;
+        speak(medSteps[stepIdx].text);
+      }
+
+      if (medElapsed >= medDuration) {
+        clearInterval(medTimer);
+        setTimeout(() => stopMeditation(true), 3000);
+      }
+    }, 1000);
+  }
+
+  function stopMeditation(completed = false) {
+    clearInterval(medTimer);
+    window.speechSynthesis.cancel();
+    document.getElementById('session-overlay').classList.remove('active');
+    if (completed) {
+      state.habits['meditate'] = true;
+      state.session['meditated'] = true;
+      saveState(state);
+      renderHabits();
+      renderMindScreen();
+    }
+  }
+
+  // ── Breathwork ────────────────────────────────────────
+  let breathTimer = null;
+  let breathPhase = 0;
+  let breathCount = 0;
+  let breathRunning = false;
+  const BREATH_PHASES = ['Breathe in', 'Hold', 'Breathe out', 'Hold'];
+  const BREATH_DURATION = 4;
+  const BREATH_CYCLES = 4;
+
+  function startBreathwork() {
+    if (breathRunning) return;
+    breathRunning = true;
+    breathPhase = 0;
+    breathCount = 0;
+    let phaseElapsed = 0;
+
+    renderMindScreen();
+
+    breathTimer = setInterval(() => {
+      phaseElapsed++;
+      const circle = document.getElementById('breath-circle-inner');
+      const label = document.getElementById('breath-phase-label');
+      const counter = document.getElementById('breath-counter');
+      if (!circle) { clearInterval(breathTimer); breathRunning = false; return; }
+
+      if (phaseElapsed >= BREATH_DURATION) {
+        phaseElapsed = 0;
+        breathPhase = (breathPhase + 1) % 4;
+        if (breathPhase === 0) {
+          breathCount++;
+          if (breathCount >= BREATH_CYCLES) {
+            clearInterval(breathTimer);
+            breathRunning = false;
+            state.habits['breathwork'] = true;
+            state.session['breathwork_done'] = true;
+            saveState(state);
+            renderHabits();
+            renderMindScreen();
+            return;
+          }
+        }
+      }
+
+      if (label) label.textContent = BREATH_PHASES[breathPhase];
+      if (counter) counter.textContent = 'Cycle ' + (breathCount + 1) + ' of ' + BREATH_CYCLES;
+
+      const scale = breathPhase === 0 ? 1 + (phaseElapsed / BREATH_DURATION) * 0.3
+                  : breathPhase === 1 ? 1.3
+                  : breathPhase === 2 ? 1.3 - (phaseElapsed / BREATH_DURATION) * 0.3
+                  : 1;
+      circle.style.transform = `scale(${scale})`;
+    }, 1000);
+  }
+
+  // ── Mind screen ───────────────────────────────────────
+  function renderMindScreen() {
+    const content = document.getElementById('mind-content');
+    const breathDone = state.session['breathwork_done'] || false;
+    const meditatedDone = state.session['meditated'] || false;
+    const todayQuoteIdx = new Date().getDay() % STOIC.length;
+    const quote = STOIC[todayQuoteIdx];
+
+    let html = '';
+
+    // Stoic quote
+    html += `
+      <div class="stoic-card">
+        <div class="stoic-quote">"${quote.quote}"</div>
+        <div class="stoic-author">-- ${quote.author}</div>
+      </div>`;
+
+    // Breathwork
+    html += `<div class="mind-card">
+      <div class="mind-card-title">Box breathing</div>
+      <div class="mind-card-sub">4 rounds · 4 sec each phase · ~2 min</div>`;
+
+    if (breathRunning) {
+      html += `
+        <div class="breath-container">
+          <div class="breath-circle-outer">
+            <div class="breath-circle-inner" id="breath-circle-inner" style="transition: transform 1s ease-in-out;"></div>
+          </div>
+          <div class="breath-instruction" id="breath-phase-label">Breathe in</div>
+          <div class="breath-timer" id="breath-counter">Cycle 1 of ${BREATH_CYCLES}</div>
+        </div>`;
+    } else if (breathDone) {
+      html += `<button class="mind-btn done"><i class="ti ti-check"></i>Breathwork complete</button>`;
+    } else {
+      html += `<button class="mind-btn primary" onclick="startBreathwork()"><i class="ti ti-wind"></i>Begin breathwork</button>`;
+    }
+
+    html += `</div>`;
+
+    // Meditation
+    html += `<div class="mind-card">
+      <div class="mind-card-title">Guided meditation</div>
+      <div class="mind-card-sub">5 min · guided voice · choose your session</div>`;
+
+    if (meditatedDone) {
+      html += `<button class="mind-btn done"><i class="ti ti-check"></i>Meditation complete</button>`;
+    } else {
+      html += `
+        <div class="session-selector">
+          <button class="session-select-btn ${currentMedKey === 'morning' ? 'active' : ''}" onclick="selectMed('morning')">Morning</button>
+          <button class="session-select-btn ${currentMedKey === 'evening' ? 'active' : ''}" onclick="selectMed('evening')">Evening</button>
+          <button class="session-select-btn ${currentMedKey === 'stress' ? 'active' : ''}" onclick="selectMed('stress')">Stress</button>
+        </div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:300; color:var(--muted); margin-bottom:12px; line-height:1.5;">
+          ${MEDITATIONS[currentMedKey].sub}
+        </div>
+        <button class="mind-btn primary" onclick="startMeditation('${currentMedKey}')">
+          <i class="ti ti-player-play"></i>Begin session
+        </button>`;
+    }
+
+    html += `</div>`;
+
+    content.innerHTML = html;
+  }
+
+  function selectMed(key) {
+    currentMedKey = key;
+    renderMindScreen();
+  }
 
   // ── Today header ──────────────────────────────────────
   function renderHeader() {
@@ -984,9 +1329,7 @@
           <div class="meta-item"><i class="ti ti-clock"></i>45–60 min</div>
           <div class="meta-item"><i class="ti ti-barbell"></i>${session.exercises.length} exercises</div>
         </div>
-        <button class="begin-btn" onclick="beginSession()">
-          <i class="ti ti-player-play"></i>Begin
-        </button>`;
+        <button class="begin-btn" onclick="beginSession()"><i class="ti ti-player-play"></i>Begin</button>`;
     } else {
       sessionContent.innerHTML = `<div class="rest-text">Rest day. Light movement, good food, early night.<br>You earn tomorrow in the margins of today.</div>`;
     }
@@ -1014,7 +1357,6 @@
       const pct = Math.round((c25kIdx / C25K.length) * 100);
 
       let html = '<div style="padding-top:16px;">';
-
       html += `
         <div class="c25k-card">
           <div class="c25k-week">Week ${currentRun.week} · Run ${currentRun.run} · Session ${c25kIdx + 1} of 27</div>
@@ -1030,31 +1372,24 @@
             ? `<button class="c25k-btn secondary"><i class="ti ti-check"></i>Run logged today</button>`
             : `<button class="c25k-btn primary" onclick="completeRun()"><i class="ti ti-run"></i>Mark run complete</button>`
           }
-        </div>`;
-
-      html += `
+        </div>
         <div class="recovery-card">
           <div class="recovery-title">Active recovery</div>
           <div class="recovery-sub">10 min stretching · light walk · foam rolling</div>
-        </div>`;
-
-      html += `<div style="margin-top:12px;">
-        <div class="eyebrow" style="padding: 0 0 10px;">Browse sessions</div>
-        <div style="display:flex; gap:8px;">
-          ${['push','pull','legs'].map(s => `
-            <button onclick="previewSession('${s}')" style="
-              flex:1; padding:8px 4px; border-radius:3px;
-              border: 0.5px solid var(--border);
-              background: var(--subtle);
-              color: var(--muted);
-              font-family:'Space Mono',monospace; font-size:9px;
-              letter-spacing:0.1em; text-transform:uppercase; cursor:pointer;">
-              ${s}
-            </button>`).join('')}
+        </div>
+        <div style="margin-top:12px;">
+          <div class="eyebrow" style="padding:0 0 10px;">Browse sessions</div>
+          <div style="display:flex; gap:8px;">
+            ${['push','pull','legs'].map(s => `
+              <button onclick="previewSession('${s}')" style="
+                flex:1; padding:8px 4px; border-radius:3px;
+                border:0.5px solid var(--border); background:var(--subtle); color:var(--muted);
+                font-family:'Space Mono',monospace; font-size:9px;
+                letter-spacing:0.1em; text-transform:uppercase; cursor:pointer;">${s}
+              </button>`).join('')}
+          </div>
         </div>
       </div>`;
-
-      html += '</div>';
       trainContent.innerHTML = html;
       return;
     }
@@ -1064,19 +1399,16 @@
     trainSub.textContent = session.sub;
     trainBadge.textContent = session.label;
     trainBadge.className = 'training-badge';
-
     renderExercises(sessionKey, session);
   }
 
   function renderExercises(sessionKey, session) {
     const trainContent = document.getElementById('train-content');
     let html = '<div style="padding-top:16px;">';
-
     session.exercises.forEach((exercise, exIdx) => {
       const exKey = sessionKey + '_' + exIdx;
       const exState = state.session[exKey] || {};
       const allSetsDone = Object.keys(exState).filter(k => k.startsWith('done_')).length === exercise.sets;
-
       html += `
         <div class="exercise-card" id="ex-card-${exIdx}">
           <div class="exercise-header${allSetsDone ? ' completed' : ''}" onclick="toggleExercise(${exIdx})">
@@ -1088,11 +1420,8 @@
           </div>
           <div class="exercise-body" id="ex-body-${exIdx}">
             <div class="set-inputs-header">
-              <span>Weight (kg)</span>
-              <span>Reps</span>
-              <span class="spacer"></span>
+              <span>Weight (kg)</span><span>Reps</span><span class="spacer"></span>
             </div>`;
-
       for (let s = 0; s < exercise.sets; s++) {
         const setDone = exState['done_' + s] || false;
         const weightVal = exState['weight_' + s] || '';
@@ -1101,50 +1430,38 @@
           <div class="set-row">
             <span class="set-num">S${s + 1}</span>
             <input class="set-input" type="number" placeholder="kg" value="${weightVal}"
-              onchange="saveSetData('${exKey}', 'weight_${s}', this.value)"
-              oninput="saveSetData('${exKey}', 'weight_${s}', this.value)">
+              onchange="saveSetData('${exKey}','weight_${s}',this.value)"
+              oninput="saveSetData('${exKey}','weight_${s}',this.value)">
             <input class="set-input" type="number" placeholder="${exercise.reps}" value="${repsVal}"
-              onchange="saveSetData('${exKey}', 'reps_${s}', this.value)"
-              oninput="saveSetData('${exKey}', 'reps_${s}', this.value)">
-            <button class="set-done-btn${setDone ? ' done' : ''}" onclick="toggleSetDone('${exKey}', ${s}, ${exIdx})">
+              onchange="saveSetData('${exKey}','reps_${s}',this.value)"
+              oninput="saveSetData('${exKey}','reps_${s}',this.value)">
+            <button class="set-done-btn${setDone ? ' done' : ''}" onclick="toggleSetDone('${exKey}',${s},${exIdx},'${sessionKey}')">
               ${setDone ? '<i class="ti ti-check"></i>' : ''}
             </button>
           </div>`;
       }
-
       html += `</div></div>`;
     });
-
     const sessionDone = state.session['session_complete'] || false;
     html += `
       <button class="session-complete-btn" onclick="completeSession()">
-        <i class="ti ti-trophy"></i>
-        ${sessionDone ? 'Session logged' : 'Complete session'}
-      </button>
-    </div>`;
-
+        <i class="ti ti-trophy"></i>${sessionDone ? 'Session logged' : 'Complete session'}
+      </button></div>`;
     trainContent.innerHTML = html;
-
-    if (sessionDone) {
-      document.getElementById('complete-banner').classList.add('show');
-    }
+    if (sessionDone) document.getElementById('complete-banner').classList.add('show');
   }
 
   function previewSession(sessionKey) {
     const session = PROGRAMME[sessionKey];
-    const trainTitle = document.getElementById('train-title');
-    const trainSub = document.getElementById('train-sub');
-    const trainBadge = document.getElementById('train-badge');
-    trainTitle.textContent = session.title;
-    trainSub.textContent = session.sub;
-    trainBadge.textContent = session.label;
-    trainBadge.className = 'training-badge';
+    document.getElementById('train-title').textContent = session.title;
+    document.getElementById('train-sub').textContent = session.sub;
+    document.getElementById('train-badge').textContent = session.label;
+    document.getElementById('train-badge').className = 'training-badge';
     renderExercises(sessionKey, session);
   }
 
   function toggleExercise(idx) {
-    const body = document.getElementById('ex-body-' + idx);
-    body.classList.toggle('open');
+    document.getElementById('ex-body-' + idx).classList.toggle('open');
   }
 
   function saveSetData(exKey, field, value) {
@@ -1153,11 +1470,10 @@
     saveState(state);
   }
 
-  function toggleSetDone(exKey, setIdx, exIdx) {
+  function toggleSetDone(exKey, setIdx, exIdx, sessionKey) {
     if (!state.session[exKey]) state.session[exKey] = {};
     state.session[exKey]['done_' + setIdx] = !state.session[exKey]['done_' + setIdx];
     saveState(state);
-    const sessionKey = PPL_SCHEDULE[new Date().getDay()];
     renderExercises(sessionKey, PROGRAMME[sessionKey]);
     document.getElementById('ex-body-' + exIdx).classList.add('open');
   }
@@ -1245,6 +1561,7 @@
     document.getElementById('screen-' + name).classList.add('active');
     el.classList.add('active');
     if (name === 'train') renderTrainScreen();
+    if (name === 'mind') renderMindScreen();
   }
 
   function beginSession() {
