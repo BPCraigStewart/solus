@@ -366,6 +366,208 @@
     color: #FAFAF8;
   }
 
+  /* Train screen */
+  .train-header {
+    padding: 52px 24px 16px;
+    border-bottom: 0.5px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .session-day-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .session-day-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .exercise-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .exercise-header {
+    padding: 12px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: var(--subtle);
+  }
+
+  .exercise-header.completed {
+    background: var(--accent-light);
+  }
+
+  .exercise-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .exercise-name.completed {
+    color: var(--accent);
+  }
+
+  .exercise-target {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  .exercise-body {
+    padding: 12px 14px;
+    display: none;
+  }
+
+  .exercise-body.open { display: block; }
+
+  .set-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    border-bottom: 0.5px solid #F4F4F0;
+  }
+
+  .set-row:last-of-type { border-bottom: none; }
+
+  .set-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: #C8C8C4;
+    width: 20px;
+    flex-shrink: 0;
+  }
+
+  .set-input {
+    flex: 1;
+    background: var(--subtle);
+    border: 0.5px solid var(--border);
+    border-radius: 4px;
+    padding: 7px 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--ink);
+    outline: none;
+    text-align: center;
+    transition: border-color 0.15s;
+  }
+
+  .set-input:focus { border-color: var(--accent); }
+  .set-input::placeholder { color: #C8C8C4; font-size: 10px; }
+
+  .set-done-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 3px;
+    border: 1.5px solid #C8C8C4;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.15s;
+  }
+
+  .set-done-btn.done {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .set-done-btn i { font-size: 13px; color: #FAFAF8; }
+
+  .set-input-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  .set-inputs-header {
+    display: flex;
+    gap: 8px;
+    padding: 0 0 4px;
+    margin-left: 28px;
+  }
+
+  .set-inputs-header span {
+    flex: 1;
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .set-inputs-header .spacer { width: 28px; flex: none; }
+
+  .session-complete-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--accent);
+    color: #FAFAF8;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: opacity 0.15s;
+  }
+
+  .session-complete-btn:active { opacity: 0.8; }
+
+  .rest-day-train {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 12px;
+    padding: 40px 24px;
+  }
+
+  .rest-day-train i { font-size: 32px; color: var(--border); }
+
+  .rest-day-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .rest-day-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+  }
+
   .coming-soon {
     display: flex;
     flex-direction: column;
@@ -397,6 +599,20 @@
 
   .screen { display: none; flex-direction: column; flex: 1; overflow: hidden; }
   .screen.active { display: flex; }
+
+  .complete-banner {
+    background: var(--accent);
+    color: #FAFAF8;
+    padding: 12px 24px;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: none;
+  }
+
+  .complete-banner.show { display: block; }
 </style>
 </head>
 <body>
@@ -417,7 +633,7 @@
       </div>
     </div>
     <div class="scroll">
-      <div class="section" id="session-section">
+      <div class="section">
         <div class="eyebrow">Today's session</div>
         <div id="session-content"></div>
       </div>
@@ -470,20 +686,20 @@
 
   <!-- TRAIN SCREEN -->
   <div class="screen" id="screen-train">
-    <div class="header">
+    <div class="train-header header">
       <div class="wordmark">solus</div>
       <div class="greeting" id="greeting-train"></div>
       <div class="header-row">
         <div class="date-block">
-          <div class="date-main">Train</div>
-          <div class="date-sub">Your workout plan</div>
+          <div class="date-main" id="train-title"></div>
+          <div class="date-sub" id="train-sub"></div>
         </div>
+        <div class="training-badge" id="train-badge"></div>
       </div>
     </div>
-    <div class="coming-soon">
-      <i class="ti ti-barbell"></i>
-      <div class="coming-soon-title">Coming soon</div>
-      <div class="coming-soon-sub">Your Push Pull Legs programme<br>and session tracker</div>
+    <div class="complete-banner" id="complete-banner">Session complete. Well done.</div>
+    <div class="scroll" id="train-scroll">
+      <div id="train-content"></div>
     </div>
   </div>
 
@@ -552,6 +768,59 @@
 </div>
 
 <script>
+  // ── Programme ─────────────────────────────────────────
+  const PROGRAMME = {
+    push: {
+      label: 'Push day',
+      title: 'Upper push',
+      sub: 'chest · shoulders · triceps',
+      exercises: [
+        { name: 'Barbell Bench Press', sets: 4, reps: 8 },
+        { name: 'Dumbbell Incline Press', sets: 3, reps: 10 },
+        { name: 'Dumbbell Lateral Raise', sets: 3, reps: 12 },
+        { name: 'Close Grip Barbell Press', sets: 3, reps: 10 },
+        { name: 'Dumbbell Overhead Tricep Extension', sets: 3, reps: 12 }
+      ]
+    },
+    pull: {
+      label: 'Pull day',
+      title: 'Upper pull',
+      sub: 'back · biceps · rear delts',
+      exercises: [
+        { name: 'Barbell Bent Over Row', sets: 4, reps: 8 },
+        { name: 'Dumbbell Single Arm Row', sets: 3, reps: 10 },
+        { name: 'Dumbbell Pullover', sets: 3, reps: 12 },
+        { name: 'Barbell Bicep Curl', sets: 3, reps: 10 },
+        { name: 'Dumbbell Hammer Curl', sets: 3, reps: 12 },
+        { name: 'Dumbbell Rear Delt Fly', sets: 3, reps: 12 }
+      ]
+    },
+    legs: {
+      label: 'Legs day',
+      title: 'Lower body',
+      sub: 'quads · hamstrings · glutes · calves',
+      exercises: [
+        { name: 'Dumbbell Bulgarian Split Squat', sets: 4, reps: 10 },
+        { name: 'Barbell Romanian Deadlift', sets: 4, reps: 10 },
+        { name: 'Stiff Leg Dumbbell Deadlift', sets: 3, reps: 12 },
+        { name: 'Dumbbell Lunge', sets: 3, reps: 10 },
+        { name: 'Dumbbell Goblet Squat', sets: 3, reps: 12 },
+        { name: 'Calf Raise', sets: 4, reps: 15 }
+      ]
+    }
+  };
+
+  const PPL_SCHEDULE = {
+    1: 'push',
+    2: 'pull',
+    3: 'legs',
+    4: 'rest',
+    5: 'push',
+    6: 'pull',
+    0: 'rest'
+  };
+
+  // ── Habits ────────────────────────────────────────────
   const HABITS = [
     { id: 'exercise', name: 'Exercise' },
     { id: 'meditate', name: 'Meditate' },
@@ -559,16 +828,6 @@
     { id: 'eat', name: 'Eat well' },
     { id: 'spanish', name: 'Spanish' }
   ];
-
-  const PPL = {
-    1: { type: 'training', label: 'Push day', title: 'Upper push', sub: 'chest · shoulders · triceps', duration: '45–60 min', exercises: '6 exercises' },
-    2: { type: 'training', label: 'Pull day', title: 'Upper pull', sub: 'back · biceps · rear delts', duration: '45–60 min', exercises: '6 exercises' },
-    3: { type: 'training', label: 'Legs day', title: 'Lower body', sub: 'quads · hamstrings · calves', duration: '50–65 min', exercises: '7 exercises' },
-    4: { type: 'rest', label: 'Rest day' },
-    5: { type: 'training', label: 'Push day', title: 'Upper push', sub: 'chest · shoulders · triceps', duration: '45–60 min', exercises: '6 exercises' },
-    6: { type: 'training', label: 'Pull day', title: 'Upper pull', sub: 'back · biceps · rear delts', duration: '45–60 min', exercises: '6 exercises' },
-    0: { type: 'rest', label: 'Rest day' }
-  };
 
   const PROMPTS = [
     'What is one thing you can do today that your <em>future self</em> will thank you for?',
@@ -580,6 +839,7 @@
     'What is one thing you are genuinely <em>proud of</em> this week?'
   ];
 
+  // ── Greeting ──────────────────────────────────────────
   function getGreeting() {
     const hour = new Date().getHours();
     if (hour < 12) return 'Good morning, Craig.';
@@ -595,12 +855,13 @@
     });
   }
 
+  // ── State ─────────────────────────────────────────────
   const todayKey = () => new Date().toISOString().slice(0, 10);
 
   function getState() {
     const saved = localStorage.getItem('solus-' + todayKey());
     if (saved) return JSON.parse(saved);
-    return { habits: {}, mood: null, reflection: '' };
+    return { habits: {}, mood: null, reflection: '', session: {} };
   }
 
   function saveState(s) {
@@ -608,24 +869,32 @@
   }
 
   let state = getState();
+  if (!state.session) state.session = {};
 
+  // ── Today header ──────────────────────────────────────
   function renderHeader() {
     const now = new Date();
     const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     document.getElementById('date-main').textContent = days[now.getDay()] + ', ' + now.getDate() + ' ' + months[now.getMonth()];
-    const session = PPL[now.getDay()];
-    document.getElementById('date-sub').textContent = session.label;
+
+    const sessionKey = PPL_SCHEDULE[now.getDay()];
+    const isRest = sessionKey === 'rest';
+    const session = isRest ? null : PROGRAMME[sessionKey];
+
+    document.getElementById('date-sub').textContent = isRest ? 'Rest day' : session.label;
+
     const badge = document.getElementById('training-badge');
-    badge.textContent = session.label;
-    badge.className = 'training-badge' + (session.type === 'rest' ? ' rest' : '');
+    badge.textContent = isRest ? 'Rest day' : session.label;
+    badge.className = 'training-badge' + (isRest ? ' rest' : '');
+
     const sessionContent = document.getElementById('session-content');
-    if (session.type === 'training') {
+    if (!isRest) {
       sessionContent.innerHTML = `
         <div class="session-title">${session.title}<br><span>${session.sub}</span></div>
         <div class="session-meta">
-          <div class="meta-item"><i class="ti ti-clock"></i>${session.duration}</div>
-          <div class="meta-item"><i class="ti ti-barbell"></i>${session.exercises}</div>
+          <div class="meta-item"><i class="ti ti-clock"></i>45–60 min</div>
+          <div class="meta-item"><i class="ti ti-barbell"></i>${session.exercises.length} exercises</div>
         </div>
         <button class="begin-btn" onclick="beginSession()">
           <i class="ti ti-player-play"></i>Begin
@@ -635,6 +904,125 @@
     }
   }
 
+  // ── Train screen ──────────────────────────────────────
+  function renderTrainScreen() {
+    const now = new Date();
+    const sessionKey = PPL_SCHEDULE[now.getDay()];
+    const isRest = sessionKey === 'rest';
+    const trainContent = document.getElementById('train-content');
+    const trainTitle = document.getElementById('train-title');
+    const trainSub = document.getElementById('train-sub');
+    const trainBadge = document.getElementById('train-badge');
+
+    if (isRest) {
+      trainTitle.textContent = 'Rest day';
+      trainSub.textContent = 'Recovery';
+      trainBadge.textContent = 'Rest day';
+      trainBadge.className = 'training-badge rest';
+      trainContent.innerHTML = `
+        <div class="rest-day-train">
+          <i class="ti ti-moon"></i>
+          <div class="rest-day-title">Rest day</div>
+          <div class="rest-day-sub">Recovery is where progress is made.<br>Sleep well, eat well, come back stronger.</div>
+        </div>`;
+      return;
+    }
+
+    const session = PROGRAMME[sessionKey];
+    trainTitle.textContent = session.title;
+    trainSub.textContent = session.sub;
+    trainBadge.textContent = session.label;
+    trainBadge.className = 'training-badge';
+
+    let html = '<div style="padding-top: 16px;">';
+
+    session.exercises.forEach((exercise, exIdx) => {
+      const exKey = sessionKey + '_' + exIdx;
+      const exState = state.session[exKey] || {};
+      const allSetsDone = Object.keys(exState).filter(k => k.startsWith('done_')).length === exercise.sets;
+
+      html += `
+        <div class="exercise-card" id="ex-card-${exIdx}">
+          <div class="exercise-header${allSetsDone ? ' completed' : ''}" onclick="toggleExercise(${exIdx})">
+            <div>
+              <div class="exercise-name${allSetsDone ? ' completed' : ''}">${exercise.name}</div>
+              <div class="exercise-target">${exercise.sets} sets · ${exercise.reps} reps</div>
+            </div>
+            <i class="ti ti-chevron-down" style="font-size:16px; color:var(--muted);"></i>
+          </div>
+          <div class="exercise-body" id="ex-body-${exIdx}">
+            <div class="set-inputs-header">
+              <span>Weight (kg)</span>
+              <span>Reps</span>
+              <span class="spacer"></span>
+            </div>`;
+
+      for (let s = 0; s < exercise.sets; s++) {
+        const setDone = exState['done_' + s] || false;
+        const weightVal = exState['weight_' + s] || '';
+        const repsVal = exState['reps_' + s] || '';
+        html += `
+          <div class="set-row">
+            <span class="set-num">S${s + 1}</span>
+            <input class="set-input" type="number" placeholder="kg" value="${weightVal}"
+              onchange="saveSetData('${exKey}', 'weight_${s}', this.value)"
+              oninput="saveSetData('${exKey}', 'weight_${s}', this.value)">
+            <input class="set-input" type="number" placeholder="${exercise.reps}" value="${repsVal}"
+              onchange="saveSetData('${exKey}', 'reps_${s}', this.value)"
+              oninput="saveSetData('${exKey}', 'reps_${s}', this.value)">
+            <button class="set-done-btn${setDone ? ' done' : ''}" onclick="toggleSetDone('${exKey}', ${s}, ${exIdx}, ${session.exercises.length})">
+              ${setDone ? '<i class="ti ti-check"></i>' : ''}
+            </button>
+          </div>`;
+      }
+
+      html += `</div></div>`;
+    });
+
+    const sessionDone = state.session['session_complete'] || false;
+    html += `
+      <button class="session-complete-btn" onclick="completeSession()">
+        <i class="ti ti-trophy" style="margin-right:6px;"></i>
+        ${sessionDone ? 'Session logged' : 'Complete session'}
+      </button>
+    </div>`;
+
+    trainContent.innerHTML = html;
+
+    if (sessionDone) {
+      document.getElementById('complete-banner').classList.add('show');
+    }
+  }
+
+  function toggleExercise(idx) {
+    const body = document.getElementById('ex-body-' + idx);
+    body.classList.toggle('open');
+  }
+
+  function saveSetData(exKey, field, value) {
+    if (!state.session[exKey]) state.session[exKey] = {};
+    state.session[exKey][field] = value;
+    saveState(state);
+  }
+
+  function toggleSetDone(exKey, setIdx, exIdx, totalExercises) {
+    if (!state.session[exKey]) state.session[exKey] = {};
+    state.session[exKey]['done_' + setIdx] = !state.session[exKey]['done_' + setIdx];
+    saveState(state);
+    renderTrainScreen();
+    document.getElementById('ex-body-' + exIdx).classList.add('open');
+  }
+
+  function completeSession() {
+    state.session['session_complete'] = true;
+    state.habits['exercise'] = true;
+    saveState(state);
+    renderTrainScreen();
+    renderHabits();
+    document.getElementById('complete-banner').classList.add('show');
+  }
+
+  // ── Habits ────────────────────────────────────────────
   function renderHabits() {
     const list = document.getElementById('habit-list');
     list.innerHTML = '';
@@ -666,6 +1054,7 @@
     renderHabits();
   }
 
+  // ── Mood ──────────────────────────────────────────────
   function renderMood() {
     document.querySelectorAll('.mood-pip').forEach(pip => {
       pip.classList.toggle('selected', parseInt(pip.dataset.mood) === state.mood);
@@ -678,6 +1067,7 @@
     renderMood();
   }
 
+  // ── Reflection ────────────────────────────────────────
   function renderReflection() {
     document.getElementById('prompt-text').innerHTML = PROMPTS[new Date().getDay()];
     const input = document.getElementById('reflection-input');
@@ -688,20 +1078,20 @@
     });
   }
 
+  // ── Tabs ──────────────────────────────────────────────
   function switchTab(name, el) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     document.getElementById('screen-' + name).classList.add('active');
     el.classList.add('active');
+    if (name === 'train') renderTrainScreen();
   }
 
   function beginSession() {
-    state.habits['exercise'] = true;
-    saveState(state);
-    renderHabits();
     switchTab('train', document.querySelectorAll('.tab')[2]);
   }
 
+  // ── Init ──────────────────────────────────────────────
   renderGreetings();
   renderHeader();
   renderHabits();
