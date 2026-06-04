@@ -366,31 +366,6 @@
     color: #FAFAF8;
   }
 
-  /* Train screen */
-  .train-header {
-    padding: 52px 24px 16px;
-    border-bottom: 0.5px solid var(--border);
-    flex-shrink: 0;
-  }
-
-  .session-day-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 26px;
-    font-weight: 300;
-    color: var(--ink);
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-  }
-
-  .session-day-sub {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 4px;
-  }
-
   .exercise-card {
     background: var(--surface);
     border: 0.5px solid var(--border);
@@ -408,9 +383,7 @@
     background: var(--subtle);
   }
 
-  .exercise-header.completed {
-    background: var(--accent-light);
-  }
+  .exercise-header.completed { background: var(--accent-light); }
 
   .exercise-name {
     font-family: 'Space Grotesk', sans-serif;
@@ -419,15 +392,14 @@
     color: var(--ink);
   }
 
-  .exercise-name.completed {
-    color: var(--accent);
-  }
+  .exercise-name.completed { color: var(--accent); }
 
   .exercise-target {
     font-family: 'Space Mono', monospace;
     font-size: 9px;
     color: var(--muted);
     letter-spacing: 0.06em;
+    margin-top: 2px;
   }
 
   .exercise-body {
@@ -493,16 +465,6 @@
 
   .set-done-btn i { font-size: 13px; color: #FAFAF8; }
 
-  .set-input-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 8px;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 4px;
-  }
-
   .set-inputs-header {
     display: flex;
     gap: 8px;
@@ -536,37 +498,143 @@
     cursor: pointer;
     margin-top: 16px;
     transition: opacity 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
   }
 
   .session-complete-btn:active { opacity: 0.8; }
 
-  .rest-day-train {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    gap: 12px;
-    padding: 40px 24px;
+  .complete-banner {
+    background: var(--accent);
+    color: #FAFAF8;
+    padding: 12px 24px;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: none;
+    flex-shrink: 0;
   }
 
-  .rest-day-train i { font-size: 32px; color: var(--border); }
+  .complete-banner.show { display: block; }
 
-  .rest-day-title {
+  .c25k-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 10px;
+  }
+
+  .c25k-week {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .c25k-title {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 18px;
     font-weight: 500;
     color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
   }
 
-  .rest-day-sub {
+  .c25k-structure {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: #3A3A36;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    padding: 10px 12px;
+    background: var(--subtle);
+    border-radius: 6px;
+  }
+
+  .c25k-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .c25k-progress-track {
+    flex: 1;
+    height: 2px;
+    background: var(--border);
+    border-radius: 1px;
+  }
+
+  .c25k-progress-fill {
+    height: 2px;
+    background: var(--accent);
+    border-radius: 1px;
+    transition: width 0.4s ease;
+  }
+
+  .c25k-progress-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .c25k-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
     font-family: 'Space Mono', monospace;
     font-size: 10px;
-    color: var(--muted);
-    text-align: center;
-    line-height: 1.6;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
   }
+
+  .c25k-btn.primary { background: var(--accent); color: #FAFAF8; }
+  .c25k-btn.secondary { background: var(--subtle); color: var(--muted); border: 0.5px solid var(--border); }
+  .c25k-btn:active { opacity: 0.8; }
+
+  .recovery-card {
+    background: var(--subtle);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+
+  .recovery-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .recovery-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    line-height: 1.5;
+  }
+
+  .screen { display: none; flex-direction: column; flex: 1; overflow: hidden; }
+  .screen.active { display: flex; }
 
   .coming-soon {
     display: flex;
@@ -596,23 +664,6 @@
     text-align: center;
     line-height: 1.6;
   }
-
-  .screen { display: none; flex-direction: column; flex: 1; overflow: hidden; }
-  .screen.active { display: flex; }
-
-  .complete-banner {
-    background: var(--accent);
-    color: #FAFAF8;
-    padding: 12px 24px;
-    text-align: center;
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    display: none;
-  }
-
-  .complete-banner.show { display: block; }
 </style>
 </head>
 <body>
@@ -686,7 +737,7 @@
 
   <!-- TRAIN SCREEN -->
   <div class="screen" id="screen-train">
-    <div class="train-header header">
+    <div class="header">
       <div class="wordmark">solus</div>
       <div class="greeting" id="greeting-train"></div>
       <div class="header-row">
@@ -768,7 +819,38 @@
 </div>
 
 <script>
-  // ── Programme ─────────────────────────────────────────
+  // ── C25K Programme ────────────────────────────────────
+  const C25K = [
+    { week: 1, run: 1, structure: 'Brisk 5 min walk to warm up, then alternate 60 sec running and 90 sec walking for 20 minutes.' },
+    { week: 1, run: 2, structure: 'Brisk 5 min walk to warm up, then alternate 60 sec running and 90 sec walking for 20 minutes.' },
+    { week: 1, run: 3, structure: 'Brisk 5 min walk to warm up, then alternate 60 sec running and 90 sec walking for 20 minutes.' },
+    { week: 2, run: 1, structure: 'Brisk 5 min walk to warm up, then alternate 90 sec running and 2 min walking for 20 minutes.' },
+    { week: 2, run: 2, structure: 'Brisk 5 min walk to warm up, then alternate 90 sec running and 2 min walking for 20 minutes.' },
+    { week: 2, run: 3, structure: 'Brisk 5 min walk to warm up, then alternate 90 sec running and 2 min walking for 20 minutes.' },
+    { week: 3, run: 1, structure: 'Brisk 5 min walk, then: 90 sec run, 90 sec walk, 3 min run, 3 min walk. Repeat twice.' },
+    { week: 3, run: 2, structure: 'Brisk 5 min walk, then: 90 sec run, 90 sec walk, 3 min run, 3 min walk. Repeat twice.' },
+    { week: 3, run: 3, structure: 'Brisk 5 min walk, then: 90 sec run, 90 sec walk, 3 min run, 3 min walk. Repeat twice.' },
+    { week: 4, run: 1, structure: 'Brisk 5 min walk, then: 3 min run, 90 sec walk, 5 min run, 2.5 min walk, 3 min run, 90 sec walk, 5 min run.' },
+    { week: 4, run: 2, structure: 'Brisk 5 min walk, then: 3 min run, 90 sec walk, 5 min run, 2.5 min walk, 3 min run, 90 sec walk, 5 min run.' },
+    { week: 4, run: 3, structure: 'Brisk 5 min walk, then: 3 min run, 90 sec walk, 5 min run, 2.5 min walk, 3 min run, 90 sec walk, 5 min run.' },
+    { week: 5, run: 1, structure: 'Brisk 5 min walk, then: 5 min run, 3 min walk, 5 min run, 3 min walk, 5 min run.' },
+    { week: 5, run: 2, structure: 'Brisk 5 min walk, then: 8 min run, 5 min walk, 8 min run.' },
+    { week: 5, run: 3, structure: 'Brisk 5 min walk, then run 20 minutes without stopping. No walking intervals.' },
+    { week: 6, run: 1, structure: 'Brisk 5 min walk, then: 5 min run, 3 min walk, 8 min run, 3 min walk, 5 min run.' },
+    { week: 6, run: 2, structure: 'Brisk 5 min walk, then: 10 min run, 3 min walk, 10 min run.' },
+    { week: 6, run: 3, structure: 'Brisk 5 min walk, then run 25 minutes without stopping.' },
+    { week: 7, run: 1, structure: 'Brisk 5 min walk, then run 25 minutes without stopping.' },
+    { week: 7, run: 2, structure: 'Brisk 5 min walk, then run 25 minutes without stopping.' },
+    { week: 7, run: 3, structure: 'Brisk 5 min walk, then run 25 minutes without stopping.' },
+    { week: 8, run: 1, structure: 'Brisk 5 min walk, then run 28 minutes without stopping.' },
+    { week: 8, run: 2, structure: 'Brisk 5 min walk, then run 28 minutes without stopping.' },
+    { week: 8, run: 3, structure: 'Brisk 5 min walk, then run 28 minutes without stopping.' },
+    { week: 9, run: 1, structure: 'Brisk 5 min walk, then run 30 minutes without stopping. You are nearly there.' },
+    { week: 9, run: 2, structure: 'Brisk 5 min walk, then run 30 minutes without stopping. One more after this.' },
+    { week: 9, run: 3, structure: 'Brisk 5 min walk, then run 30 minutes without stopping. This is your graduation run. You did it.' }
+  ];
+
+  // ── PPL Programme ─────────────────────────────────────
   const PROGRAMME = {
     push: {
       label: 'Push day',
@@ -812,15 +894,14 @@
 
   const PPL_SCHEDULE = {
     1: 'push',
-    2: 'pull',
-    3: 'legs',
+    2: 'rest',
+    3: 'pull',
     4: 'rest',
-    5: 'push',
-    6: 'pull',
+    5: 'legs',
+    6: 'rest',
     0: 'rest'
   };
 
-  // ── Habits ────────────────────────────────────────────
   const HABITS = [
     { id: 'exercise', name: 'Exercise' },
     { id: 'meditate', name: 'Meditate' },
@@ -849,7 +930,7 @@
 
   function renderGreetings() {
     const greeting = getGreeting();
-    ['greeting', 'greeting-mind', 'greeting-train', 'greeting-eat', 'greeting-progress'].forEach(id => {
+    ['greeting','greeting-mind','greeting-train','greeting-eat','greeting-progress'].forEach(id => {
       const el = document.getElementById(id);
       if (el) el.textContent = greeting;
     });
@@ -864,11 +945,22 @@
     return { habits: {}, mood: null, reflection: '', session: {} };
   }
 
+  function getGlobalState() {
+    const saved = localStorage.getItem('solus-global');
+    if (saved) return JSON.parse(saved);
+    return { c25kSession: 0, c25kRunToday: false };
+  }
+
   function saveState(s) {
     localStorage.setItem('solus-' + todayKey(), JSON.stringify(s));
   }
 
+  function saveGlobalState(s) {
+    localStorage.setItem('solus-global', JSON.stringify(s));
+  }
+
   let state = getState();
+  let globalState = getGlobalState();
   if (!state.session) state.session = {};
 
   // ── Today header ──────────────────────────────────────
@@ -877,17 +969,13 @@
     const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     document.getElementById('date-main').textContent = days[now.getDay()] + ', ' + now.getDate() + ' ' + months[now.getMonth()];
-
     const sessionKey = PPL_SCHEDULE[now.getDay()];
     const isRest = sessionKey === 'rest';
     const session = isRest ? null : PROGRAMME[sessionKey];
-
     document.getElementById('date-sub').textContent = isRest ? 'Rest day' : session.label;
-
     const badge = document.getElementById('training-badge');
     badge.textContent = isRest ? 'Rest day' : session.label;
     badge.className = 'training-badge' + (isRest ? ' rest' : '');
-
     const sessionContent = document.getElementById('session-content');
     if (!isRest) {
       sessionContent.innerHTML = `
@@ -900,7 +988,7 @@
           <i class="ti ti-player-play"></i>Begin
         </button>`;
     } else {
-      sessionContent.innerHTML = `<div class="rest-text">Rest day. Recover well, eat well, sleep well.<br>You earn tomorrow in the margins of today.</div>`;
+      sessionContent.innerHTML = `<div class="rest-text">Rest day. Light movement, good food, early night.<br>You earn tomorrow in the margins of today.</div>`;
     }
   }
 
@@ -916,15 +1004,58 @@
 
     if (isRest) {
       trainTitle.textContent = 'Rest day';
-      trainSub.textContent = 'Recovery';
+      trainSub.textContent = 'Recovery & running';
       trainBadge.textContent = 'Rest day';
       trainBadge.className = 'training-badge rest';
-      trainContent.innerHTML = `
-        <div class="rest-day-train">
-          <i class="ti ti-moon"></i>
-          <div class="rest-day-title">Rest day</div>
-          <div class="rest-day-sub">Recovery is where progress is made.<br>Sleep well, eat well, come back stronger.</div>
+
+      const c25kIdx = Math.min(globalState.c25kSession, C25K.length - 1);
+      const currentRun = C25K[c25kIdx];
+      const runDoneToday = state.session['c25k_done'] || false;
+      const pct = Math.round((c25kIdx / C25K.length) * 100);
+
+      let html = '<div style="padding-top:16px;">';
+
+      html += `
+        <div class="c25k-card">
+          <div class="c25k-week">Week ${currentRun.week} · Run ${currentRun.run} · Session ${c25kIdx + 1} of 27</div>
+          <div class="c25k-title">Couch to 5K</div>
+          <div class="c25k-structure">${currentRun.structure}</div>
+          <div class="c25k-progress">
+            <div class="c25k-progress-track">
+              <div class="c25k-progress-fill" style="width:${pct}%"></div>
+            </div>
+            <div class="c25k-progress-label">${pct}% complete</div>
+          </div>
+          ${runDoneToday
+            ? `<button class="c25k-btn secondary"><i class="ti ti-check"></i>Run logged today</button>`
+            : `<button class="c25k-btn primary" onclick="completeRun()"><i class="ti ti-run"></i>Mark run complete</button>`
+          }
         </div>`;
+
+      html += `
+        <div class="recovery-card">
+          <div class="recovery-title">Active recovery</div>
+          <div class="recovery-sub">10 min stretching · light walk · foam rolling</div>
+        </div>`;
+
+      html += `<div style="margin-top:12px;">
+        <div class="eyebrow" style="padding: 0 0 10px;">Browse sessions</div>
+        <div style="display:flex; gap:8px;">
+          ${['push','pull','legs'].map(s => `
+            <button onclick="previewSession('${s}')" style="
+              flex:1; padding:8px 4px; border-radius:3px;
+              border: 0.5px solid var(--border);
+              background: var(--subtle);
+              color: var(--muted);
+              font-family:'Space Mono',monospace; font-size:9px;
+              letter-spacing:0.1em; text-transform:uppercase; cursor:pointer;">
+              ${s}
+            </button>`).join('')}
+        </div>
+      </div>`;
+
+      html += '</div>';
+      trainContent.innerHTML = html;
       return;
     }
 
@@ -934,7 +1065,12 @@
     trainBadge.textContent = session.label;
     trainBadge.className = 'training-badge';
 
-    let html = '<div style="padding-top: 16px;">';
+    renderExercises(sessionKey, session);
+  }
+
+  function renderExercises(sessionKey, session) {
+    const trainContent = document.getElementById('train-content');
+    let html = '<div style="padding-top:16px;">';
 
     session.exercises.forEach((exercise, exIdx) => {
       const exKey = sessionKey + '_' + exIdx;
@@ -970,7 +1106,7 @@
             <input class="set-input" type="number" placeholder="${exercise.reps}" value="${repsVal}"
               onchange="saveSetData('${exKey}', 'reps_${s}', this.value)"
               oninput="saveSetData('${exKey}', 'reps_${s}', this.value)">
-            <button class="set-done-btn${setDone ? ' done' : ''}" onclick="toggleSetDone('${exKey}', ${s}, ${exIdx}, ${session.exercises.length})">
+            <button class="set-done-btn${setDone ? ' done' : ''}" onclick="toggleSetDone('${exKey}', ${s}, ${exIdx})">
               ${setDone ? '<i class="ti ti-check"></i>' : ''}
             </button>
           </div>`;
@@ -982,7 +1118,7 @@
     const sessionDone = state.session['session_complete'] || false;
     html += `
       <button class="session-complete-btn" onclick="completeSession()">
-        <i class="ti ti-trophy" style="margin-right:6px;"></i>
+        <i class="ti ti-trophy"></i>
         ${sessionDone ? 'Session logged' : 'Complete session'}
       </button>
     </div>`;
@@ -992,6 +1128,18 @@
     if (sessionDone) {
       document.getElementById('complete-banner').classList.add('show');
     }
+  }
+
+  function previewSession(sessionKey) {
+    const session = PROGRAMME[sessionKey];
+    const trainTitle = document.getElementById('train-title');
+    const trainSub = document.getElementById('train-sub');
+    const trainBadge = document.getElementById('train-badge');
+    trainTitle.textContent = session.title;
+    trainSub.textContent = session.sub;
+    trainBadge.textContent = session.label;
+    trainBadge.className = 'training-badge';
+    renderExercises(sessionKey, session);
   }
 
   function toggleExercise(idx) {
@@ -1005,11 +1153,12 @@
     saveState(state);
   }
 
-  function toggleSetDone(exKey, setIdx, exIdx, totalExercises) {
+  function toggleSetDone(exKey, setIdx, exIdx) {
     if (!state.session[exKey]) state.session[exKey] = {};
     state.session[exKey]['done_' + setIdx] = !state.session[exKey]['done_' + setIdx];
     saveState(state);
-    renderTrainScreen();
+    const sessionKey = PPL_SCHEDULE[new Date().getDay()];
+    renderExercises(sessionKey, PROGRAMME[sessionKey]);
     document.getElementById('ex-body-' + exIdx).classList.add('open');
   }
 
@@ -1017,9 +1166,20 @@
     state.session['session_complete'] = true;
     state.habits['exercise'] = true;
     saveState(state);
-    renderTrainScreen();
+    const sessionKey = PPL_SCHEDULE[new Date().getDay()];
+    renderExercises(sessionKey, PROGRAMME[sessionKey]);
     renderHabits();
     document.getElementById('complete-banner').classList.add('show');
+  }
+
+  function completeRun() {
+    state.session['c25k_done'] = true;
+    state.habits['exercise'] = true;
+    saveState(state);
+    globalState.c25kSession = Math.min(globalState.c25kSession + 1, C25K.length - 1);
+    saveGlobalState(globalState);
+    renderHabits();
+    renderTrainScreen();
   }
 
   // ── Habits ────────────────────────────────────────────
