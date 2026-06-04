@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2292A4">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>Solus</title>
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+  :root {
+    --bg: #FAFAF8;
+    --ink: #1A1A18;
+    --muted: #8A8A84;
+    --border: #E0E0DC;
+    --accent: #2292A4;
+    --accent-light: #EAF5F7;
+    --surface: #FFFFFF;
+    --subtle: #F4F4F0;
+  }
+
+  html, body {
+    height: 100%;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Space Grotesk', sans-serif;
+    overflow: hidden;
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    max-width: 480px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* Header */
+  .header {
+    padding: 52px 24px 16px;
+    border-bottom: 0.5px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .wordmark {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .date-block {}
+
+  .date-main {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .date-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .training-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background: var(--accent-light);
+    color: var(--accent);
+  }
+
+  .training-badge.rest {
+    background: var(--subtle);
+    color: var(--muted);
+  }
+
+  /* Scroll area */
+  .scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 24px 120px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .section {
+    padding: 18px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .section:last-child { border-bottom: none; }
+
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  /* Session card */
+  .session-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .session-title span { color: var(--muted); font-weight: 300; }
+
+  .session-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .meta-item {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .meta-item i { font-size: 13px; }
+
+  .begin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--accent);
+    color: #FAFAF8;
+    padding: 10px 18px;
+    border-radius: 3px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+
+  .begin-btn:active { opacity: 0.8; }
+  .begin-btn i { font-size: 12px; }
+
+  .rest-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* Habits */
+  .habit-list { display: flex; flex-direction: column; }
+
+  .habit-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 0.5px solid #EBEBE7;
+    cursor: pointer;
+    transition: opacity 0.1s;
+  }
+
+  .habit-item:last-child { border-bottom: none; }
+  .habit-item:active { opacity: 0.7; }
+
+  .habit-left { display: flex; align-items: center; gap: 12px; }
+
+  .habit-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: #C8C8C4;
+    width: 16px;
+  }
+
+  .habit-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    transition: color 0.2s;
+  }
+
+  .habit-name.done {
+    color: #AEAEAA;
+    text-decoration: line-through;
+    text-decoration-color: #AEAEAA;
+  }
+
+  .habit-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border: 1.5px solid #C8C8C4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .habit-check.done {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .habit-check i { font-size: 12px; color: #FAFAF8; }
+
+  /* Progress */
+  .progress-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .progress-track {
+    flex: 1;
+    height: 2px;
+    background: var(--border);
+    border-radius: 1px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 2px;
+    background: var(--accent);
+    border-radius: 1px;
+    transition: width 0.4s ease;
+  }
+
+  .progress-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* Reflection */
+  .prompt-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: #3A3A36;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+  }
+
+  .prompt-text em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  .reflection-input {
+    width: 100%;
+    background: var(--subtle);
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--ink);
+    resize: none;
+    outline: none;
+    min-height: 72px;
+    transition: border-color 0.2s;
+  }
+
+  .reflection-input:focus { border-color: var(--accent); }
+  .reflection-input::placeholder { color: #C8C8C4; }
+
+  /* Tab bar */
+  .tab-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: var(--bg);
+    border-top: 0.5px solid var(--border);
+    display: flex;
+    padding: 10px 0 28px;
+    z-index: 10;
+  }
+
+  .tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+    padding: 4px 0;
+  }
+
+  .tab i { font-size: 20px; color: #C8C8C4; transition: color 0.15s; }
+  .tab.active i { color: var(--accent); }
+
+  .tab-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #C8C8C4;
+    transition: color 0.15s;
+  }
+
+  .tab.active .tab-label { color: var(--accent); }
+
+  /* Mood */
+  .mood-row { display: flex; gap: 6px; margin-top: 4px; }
+
+  .mood-pip {
+    flex: 1;
+    height: 32px;
+    border: 0.5px solid var(--border);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .mood-pip:active { opacity: 0.7; }
+
+  .mood-pip.selected {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #FAFAF8;
+  }
+
+  /* Coming soon screens */
+  .coming-soon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 12px;
+    padding: 40px 24px;
+  }
+
+  .coming-soon i { font-size: 32px; color: var(--border); }
+
+  .coming-soon-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .coming-soon-sub {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* Screens */
+  .screen { display: none; flex-direction: column; flex: 1; overflow: hidden; }
+  .screen.active { display: flex; }
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- TODAY SCREEN -->
+  <div class="screen active" id="screen-today">
+    <div class="header">
+      <div class="wordmark">solus</div>
+      <div class="header-row">
+        <div class="date-block">
+          <div class="date-main" id="date-main"></div>
+          <div class="date-sub" id="date-sub"></div>
+        </div>
+        <div class="training-badge" id="training-badge"></div>
+      </div>
+    </div>
+
+    <div class="scroll">
+
+      <div class="section" id="session-section">
+        <div class="eyebrow">Today's session</div>
+        <div id="session-content"></div>
+      </div>
+
+      <div class="section">
+        <div class="eyebrow">Habits</div>
+        <div class="habit-list" id="habit-list"></div>
+        <div class="progress-row">
+          <div class="progress-track">
+            <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+          </div>
+          <div class="progress-label" id="progress-label">0 / 5</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="eyebrow">Mood</div>
+        <div class="mood-row" id="mood-row">
+          <div class="mood-pip" data-mood="1" onclick="setMood(1)">1</div>
+          <div class="mood-pip" data-mood="2" onclick="setMood(2)">2</div>
+          <div class="mood-pip" data-mood="3" onclick="setMood(3)">3</div>
+          <div class="mood-pip" data-mood="4" onclick="setMood(4)">4</div>
+          <div class="mood-pip" data-mood="5" onclick="setMood(5)">5</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="eyebrow">Reflection</div>
+        <div class="prompt-text" id="prompt-text"></div>
+        <textarea class="reflection-input" placeholder="Write anything..." id="reflection-input"></textarea>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MIND SCREEN -->
+  <div class="screen" id="screen-mind">
+    <div class="header">
+      <div class="wordmark">solus</div>
+      <div class="header-row">
+        <div class="date-block">
+          <div class="date-main">Mind</div>
+          <div class="date-sub">Meditation & breathwork</div>
+        </div>
+      </div>
+    </div>
+    <div class="coming-soon">
+      <i class="ti ti-brain"></i>
+      <div class="coming-soon-title">Coming soon</div>
+      <div class="coming-soon-sub">Guided meditation, breathwork,<br>and daily reflections</div>
+    </div>
+  </div>
+
+  <!-- TRAIN SCREEN -->
+  <div class="screen" id="screen-train">
+    <div class="header">
+      <div class="wordmark">solus</div>
+      <div class="header-row">
+        <div class="date-block">
+          <div class="date-main">Train</div>
+          <div class="date-sub">Your workout plan</div>
+        </div>
+      </div>
+    </div>
+    <div class="coming-soon">
+      <i class="ti ti-barbell"></i>
+      <div class="coming-soon-title">Coming soon</div>
+      <div class="coming-soon-sub">Your Push Pull Legs programme<br>and session tracker</div>
+    </div>
+  </div>
+
+  <!-- EAT SCREEN -->
+  <div class="screen" id="screen-eat">
+    <div class="header">
+      <div class="wordmark">solus</div>
+      <div class="header-row">
+        <div class="date-block">
+          <div class="date-main">Eat</div>
+          <div class="date-sub">Nutrition & meal plan</div>
+        </div>
+      </div>
+    </div>
+    <div class="coming-soon">
+      <i class="ti ti-salad"></i>
+      <div class="coming-soon-title">Coming soon</div>
+      <div class="coming-soon-sub">Your weekly meal plan,<br>recipes, and protein tracker</div>
+    </div>
+  </div>
+
+  <!-- PROGRESS SCREEN -->
+  <div class="screen" id="screen-progress">
+    <div class="header">
+      <div class="wordmark">solus</div>
+      <div class="header-row">
+        <div class="date-block">
+          <div class="date-main">Progress</div>
+          <div class="date-sub">Your trends over time</div>
+        </div>
+      </div>
+    </div>
+    <div class="coming-soon">
+      <i class="ti ti-chart-line"></i>
+      <div class="coming-soon-title">Coming soon</div>
+      <div class="coming-soon-sub">Weight, mood, and habit trends<br>over weeks and months</div>
+    </div>
+  </div>
+
+  <!-- TAB BAR -->
+  <div class="tab-bar">
+    <div class="tab active" onclick="switchTab('today')">
+      <i class="ti ti-home"></i>
+      <span class="tab-label">Today</span>
+    </div>
+    <div class="tab" onclick="switchTab('mind')">
+      <i class="ti ti-brain"></i>
+      <span class="tab-label">Mind</span>
+    </div>
+    <div class="tab" onclick="switchTab('train')">
+      <i class="ti ti-barbell"></i>
+      <span class="tab-label">Train</span>
+    </div>
+    <div class="tab" onclick="switchTab('eat')">
+      <i class="ti ti-salad"></i>
+      <span class="tab-label">Eat</span>
+    </div>
+    <div class="tab" onclick="switchTab('progress')">
+      <i class="ti ti-chart-line"></i>
+      <span class="tab-label">Progress</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // ── Data ──────────────────────────────────────────────
+  const HABITS = [
+    { id: 'exercise', name: 'Exercise' },
+    { id: 'meditate', name: 'Meditate' },
+    { id: 'breathwork', name: 'Breathwork' },
+    { id: 'eat', name: 'Eat well' },
+    { id: 'spanish', name: 'Spanish' }
+  ];
+
+  const PPL = {
+    1: { type: 'training', label: 'Push day', title: 'Upper push', sub: 'chest · shoulders · triceps', duration: '45–60 min', exercises: '6 exercises' },
+    2: { type: 'training', label: 'Pull day', title: 'Upper pull', sub: 'back · biceps · rear delts', duration: '45–60 min', exercises: '6 exercises' },
+    3: { type: 'training', label: 'Legs day', title: 'Lower body', sub: 'quads · hamstrings · calves', duration: '50–65 min', exercises: '7 exercises' },
+    4: { type: 'rest', label: 'Rest day' },
+    5: { type: 'training', label: 'Push day', title: 'Upper push', sub: 'chest · shoulders · triceps', duration: '45–60 min', exercises: '6 exercises' },
+    6: { type: 'training', label: 'Pull day', title: 'Upper pull', sub: 'back · biceps · rear delts', duration: '45–60 min', exercises: '6 exercises' },
+    0: { type: 'rest', label: 'Rest day' }
+  };
+
+  const PROMPTS = [
+    'What is one thing you can do today that your <em>future self</em> will thank you for?',
+    'What does <em>feeling strong</em> mean to you right now?',
+    'Name one small win from yesterday worth <em>carrying forward</em>.',
+    'What would today look like if you gave it <em>full effort</em>?',
+    'What is one habit that, if consistent, would <em>change everything</em>?',
+    'How do you want to feel at <em>9pm tonight</em>?',
+    'What is one thing you are genuinely <em>proud of</em> this week?'
+  ];
+
+  // ── State ─────────────────────────────────────────────
+  const todayKey = () => new Date().toISOString().slice(0, 10);
+
+  function getState() {
+    const saved = localStorage.getItem('solus-' + todayKey());
+    if (saved) return JSON.parse(saved);
+    return { habits: {}, mood: null, reflection: '' };
+  }
+
+  function saveState(state) {
+    localStorage.setItem('solus-' + todayKey(), JSON.stringify(state));
+  }
+
+  let state = getState();
+
+  // ── Date & session ────────────────────────────────────
+  function renderHeader() {
+    const now = new Date();
+    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const dayName = days[now.getDay()];
+    const date = now.getDate();
+    const month = months[now.getMonth()];
+
+    document.getElementById('date-main').textContent = dayName + ', ' + date + ' ' + month;
+
+    const session = PPL[now.getDay()];
+    document.getElementById('date-sub').textContent = session.label;
+
+    const badge = document.getElementById('training-badge');
+    badge.textContent = session.label;
+    badge.className = 'training-badge' + (session.type === 'rest' ? ' rest' : '');
+
+    const sessionContent = document.getElementById('session-content');
+    if (session.type === 'training') {
+      sessionContent.innerHTML = `
+        <div class="session-title">${session.title}<br><span>${session.sub}</span></div>
+        <div class="session-meta">
+          <div class="meta-item"><i class="ti ti-clock"></i>${session.duration}</div>
+          <div class="meta-item"><i class="ti ti-barbell"></i>${session.exercises}</div>
+        </div>
+        <button class="begin-btn" onclick="beginSession()">
+          <i class="ti ti-player-play"></i>Begin
+        </button>`;
+    } else {
+      sessionContent.innerHTML = `
+        <div class="rest-text">Rest day. Recover well, eat well, sleep well.<br>You earn tomorrow in the margins of today.</div>`;
+    }
+  }
+
+  // ── Habits ────────────────────────────────────────────
+  function renderHabits() {
+    const list = document.getElementById('habit-list');
+    list.innerHTML = '';
+    let done = 0;
+
+    HABITS.forEach((habit, i) => {
+      const isDone = !!state.habits[habit.id];
+      if (isDone) done++;
+
+      const item = document.createElement('div');
+      item.className = 'habit-item';
+      item.onclick = () => toggleHabit(habit.id);
+      item.innerHTML = `
+        <div class="habit-left">
+          <span class="habit-num">0${i + 1}</span>
+          <span class="habit-name${isDone ? ' done' : ''}">${habit.name}</span>
+        </div>
+        <div class="habit-check${isDone ? ' done' : ''}">
+          ${isDone ? '<i class="ti ti-check"></i>' : ''}
+        </div>`;
+      list.appendChild(item);
+    });
+
+    const pct = (done / HABITS.length) * 100;
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-label').textContent = done + ' / ' + HABITS.length;
+  }
+
+  function toggleHabit(id) {
+    state.habits[id] = !state.habits[id];
+    saveState(state);
+    renderHabits();
+  }
+
+  // ── Mood ──────────────────────────────────────────────
+  function renderMood() {
+    document.querySelectorAll('.mood-pip').forEach(pip => {
+      pip.classList.toggle('selected', parseInt(pip.dataset.mood) === state.mood);
+    });
+  }
+
+  function setMood(val) {
+    state.mood = val;
+    saveState(state);
+    renderMood();
+  }
+
+  // ── Reflection ────────────────────────────────────────
+  function renderReflection() {
+    const dayIndex = new Date().getDay();
+    document.getElementById('prompt-text').innerHTML = PROMPTS[dayIndex];
+    const input = document.getElementById('reflection-input');
+    input.value = state.reflection || '';
+    input.addEventListener('input', () => {
+      state.reflection = input.value;
+      saveState(state);
+    });
+  }
+
+  // ── Tabs ──────────────────────────────────────────────
+  function switchTab(name) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('screen-' + name).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+
+  // ── Begin session ─────────────────────────────────────
+  function beginSession() {
+    toggleHabit('exercise');
+    switchTab('train');
+    document.querySelectorAll('.tab').forEach((t, i) => {
+      if (i === 2) t.classList.add('active');
+      else t.classList.remove('active');
+    });
+  }
+
+  // ── Init ──────────────────────────────────────────────
+  renderHeader();
+  renderHabits();
+  renderMood();
+  renderReflection();
+
+  // ── Service worker ────────────────────────────────────
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+  }
+</script>
+</body>
+</html>
